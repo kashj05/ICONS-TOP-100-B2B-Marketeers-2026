@@ -1,0 +1,133 @@
+.overview-section {
+  min-height: 100vh;
+  padding: 80px 8% 0;
+  background:
+    radial-gradient(circle at top right, rgba(126, 47, 255, 0.22), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(212, 169, 74, 0.14), transparent 32%),
+    linear-gradient(135deg, #050008, #15051f 55%, #07020b);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.overview-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview-content h2 {
+   margin: 14px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(27px, 5vw, 52px);
+    color: #f4d8a8;
+}
+
+.overview-content p {
+  color: #d6d2df;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 1.95;
+  margin: 15px auto;
+}
+
+.keydate-box {
+  margin: 30px auto 0;
+  padding: 4px 6%;
+  max-width: 500px;
+  border-radius: 20px 20px 20px 20px;
+  background: rgba(42, 43, 43, 0.62);
+  border: 1px solid rgba(177, 172, 172, 0.45);
+  box-shadow: 0 0 35px rgba(142, 143, 143, 0.2);
+  text-align: center;
+}
+
+.keydate-box h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  color: #dac9ab;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  gap: 16px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #939496, #d4a94a, transparent);
+}
+
+.date-item {
+  position: relative;
+  z-index: 2;
+}
+
+.date-item span {
+  display: block;
+  width: 7px;
+  height: 7px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #071a2c;
+  border: 2px solid #101111;
+  box-shadow: 0 0 18px rgba(93, 94, 94, 0.7);
+}
+
+.date-item h4 {
+  color: #f4d8a8;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.date-item p {
+  color: #f4d8a8;
+  font-size: 13px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .overview-section {
+    padding: 60px 22px 0;
+  }
+
+  .overview-content p {
+    font-size: 15px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 11px;
+    right: auto;
+    width: 1px;
+    height: 100%;
+  }
+
+  .date-item {
+    text-align: left;
+    padding-left: 42px;
+  }
+
+  .date-item span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+  }
+}

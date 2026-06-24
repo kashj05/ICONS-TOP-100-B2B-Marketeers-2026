@@ -1,0 +1,139 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #050008;
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-navbar {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  padding: 11px 24px;
+  border-radius: 50px;
+  background: rgba(77, 76, 76, 0.72);
+  border: 1px solid rgba(212, 169, 74, 0.28);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.35);
+}
+
+.hero-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-links a,
+.mobile-menu a {
+  color: #f4d8a8;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hero-links a:hover,
+.mobile-menu a:hover {
+  color: #12b7ff;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hero-navbar {
+    top: 12px;
+    right: 14px;
+    left: auto;
+    transform: none;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 38px;
+    border: 1px solid rgba(212, 169, 74, 0.35);
+    background: rgba(5, 0, 8, 0.84);
+    border-radius: 12px;
+    padding: 9px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+  }
+
+  .menu-toggle span {
+    height: 2px;
+    background: #f4d8a8;
+    border-radius: 30px;
+    transition: 0.3s ease;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 58px;
+    right: 0;
+    width: 230px;
+    padding: 22px;
+    background: rgba(5, 0, 8, 0.96);
+    border: 1px solid rgba(212, 169, 74, 0.28);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  }
+
+  .mobile-menu.show-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    font-size: 14px;
+  }
+}
